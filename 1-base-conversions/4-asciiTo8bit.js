@@ -7,7 +7,13 @@ const addZeros = require('../utils/addZeros');
 /******************************************************************************/
 
 const asciiTo8bit = str => {
-  // Your code here 
+  // Your code here
+  let decimal = '';
+  for (let i = 0; i < str.length; i++) {
+    console.log(str.charCodeAt(i))
+    decimal += str.charCodeAt(i).toString(2).padStart(8, '0');
+  }
+  return decimal;
 };
 
 /******************************************************************************/
@@ -17,6 +23,7 @@ console.log(asciiTo8bit('123'));
 
 console.log(asciiTo8bit('ABC'));
 // 010000010100001001000011
+
 
 console.log(asciiTo8bit('Hello, world!'));
 // 01001000011001010110110001101100011011110010110000100000011101110110111101110010011011000110010000100001
